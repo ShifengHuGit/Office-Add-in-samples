@@ -6,6 +6,7 @@ Office.initialize = () => {
   document.getElementById('sideload-msg').style.display='none';
   document.getElementById('app-body').style.display='flex';
   document.getElementById('run').onclick = run;
+  document.getElementById("getData").onclick = getData;
 };
 
 async function run() {
@@ -28,4 +29,13 @@ async function run() {
   } catch (error) {
     console.error(error);
   }
+}
+
+
+async function getData() {
+  await Excel.run(async (context) => {
+    const selectedRange = context.workbook.getSelectedRange();
+    var selectedText = selectedRange.load("text");
+    console.log("Selected cell text: " + selectedText);
+  });
 }
