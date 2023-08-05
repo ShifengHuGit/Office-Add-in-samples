@@ -36,6 +36,8 @@ async function getData() {
   await Excel.run(async (context) => {
     const selectedRange = context.workbook.getSelectedRange();
     var selectedText = selectedRange.load("text");
+    var element = document.getElementById("text");
+    element.textContent = selectedText;
     console.log("Selected cell text: " + selectedText);
   });
 }
