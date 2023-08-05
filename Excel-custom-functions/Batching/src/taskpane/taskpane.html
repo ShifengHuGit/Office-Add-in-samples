@@ -33,20 +33,13 @@
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none;">
         <h2 class="ms-font-xl"> Use Shortcut Key to get the answer </h2>
-        <ul class="ms-List ms-welcome__features">
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Ribbon ms-font-xl"></i>
-                <span class="ms-font-m">check the history answer</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Unlock ms-font-xl"></i>
-                <span class="ms-font-m">AI generate answer</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Design ms-font-xl"></i>
-                <span class="ms-font-m">Efficently handling the SR</span>
-            </li>
-        </ul>
+        <div>
+            <button id="setData"" class="ms-Button ms-Button-label buttons" alt="set entered data into active cell">Set data</button>
+            <label> | </label>
+            <button id="getData" class="ms-Button ms-Button-label buttons">Get data</button>
+            <label> | </label>
+            <button id="clearForm" class="ms-Button ms-Button-label buttons" alt="clear current contents of input boxes">Clear form</button>
+        </div>
         <p class="ms-font-l">Selet the cell and press  "Ctrl +R"<b>Set shortkey </b>.</p>
         <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
             <span class="ms-Button-label">Run</span>
