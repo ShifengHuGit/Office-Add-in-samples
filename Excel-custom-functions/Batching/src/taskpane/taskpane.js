@@ -6,7 +6,7 @@ Office.initialize = () => {
   document.getElementById('sideload-msg').style.display='none';
   document.getElementById('app-body').style.display='flex';
   document.getElementById('run').onclick = run;
-  document.getElementById("getCellData").onclick = getData;
+  document.getElementById("getCellData").onclick = showSelection;
 };
 
 async function run() {
@@ -41,4 +41,17 @@ async function getData() {
     console.log("Selected cell text: " + selectedText);
     alert("Fuck");
   });
+}
+
+async function showSelection() {
+  Office.context.document.getSelectedDataAsync(
+      "text",                        // coercionType
+      {valueFormat: "unformatted",   // valueFormat
+      filterType: "all"},            // filterType
+      function (result) {            // callback
+          const dataValue = result.value;
+          //write('Selected data is: ' + dataValue);
+      });
+      document.getElementById('text').innerText += dataValue; 
+      console.log("Selected cell text: " + dataValue);
 }
