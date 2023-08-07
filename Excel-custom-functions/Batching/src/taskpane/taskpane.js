@@ -34,11 +34,9 @@ async function run() {
 
 async function getData() {
   Excel.run(function(context) {
-    // 获取活动工作表
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    
+
     // 获取所选单元格
-    var selectedRange = sheet.getSelectedRange();
+    var selectedRange =  context.workbook.getSelectedRange();;
     
     // 获取所选部分的文本值
     var selectedText = selectedRange.text;
