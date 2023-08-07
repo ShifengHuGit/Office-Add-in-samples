@@ -6,7 +6,7 @@ Office.initialize = () => {
   document.getElementById('sideload-msg').style.display='none';
   document.getElementById('app-body').style.display='flex';
   document.getElementById('run').onclick = run;
-  document.getElementById("getData").onclick = getData;
+  document.getElementById("getCellData").onclick = getData;
 };
 
 async function run() {
