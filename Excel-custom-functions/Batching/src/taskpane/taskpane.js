@@ -45,7 +45,7 @@ async function getData() {
         .then(function() {
             // 打印选定部分的文本值
             console.log(selectedText);
-            document.getElementById('text').innerText += selectedText;
+            document.getElementById('text').innerText = selectedText;
         });
 }).catch(function(error) {
     console.log(error);
@@ -60,7 +60,7 @@ async function showSelection() {
       function (result) {            // callback
           const dataValue = result.value;
           //write('Selected data is: ' + dataValue);
-          document.getElementById('text').innerText += dataValue; 
+          document.getElementById('text').innerText = dataValue; 
           console.log("Selected cell text: " + dataValue);
       });
       
