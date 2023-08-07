@@ -33,14 +33,25 @@ async function run() {
 
 
 async function getData() {
-  await Excel.run(async (context) => {
-    const selectedRange = context.workbook.getSelectedRange();
-    var selectedText = selectedRange.load("text");
-    var element = document.getElementById("text");
-    element.textContent = selectedText;
-    console.log("Selected cell text: " + selectedText);
-    alert("Fuck");
-  });
+  Excel.run(function(context) {
+    // 获取活动工作表
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    
+    // 获取所选单元格
+    var selectedRange = sheet.getSelectedRange();
+    
+    // 获取所选部分的文本值
+    var selectedText = selectedRange.text;
+    
+    return context.sync()
+        .then(function() {
+            // 打印选定部分的文本值
+            console.log(selectedText);
+            document.getElementById('text').innerText += selectedText;
+        });
+}).catch(function(error) {
+    console.log(error);
+});
 }
 
 async function showSelection() {
