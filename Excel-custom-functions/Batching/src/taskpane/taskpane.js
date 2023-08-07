@@ -39,5 +39,6 @@ async function getData() {
     var element = document.getElementById("text");
     element.textContent = selectedText;
     console.log("Selected cell text: " + selectedText);
+    alert("Fuck");
   });
 }
