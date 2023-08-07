@@ -51,7 +51,8 @@ async function showSelection() {
       function (result) {            // callback
           const dataValue = result.value;
           //write('Selected data is: ' + dataValue);
+          document.getElementById('text').innerText += dataValue; 
+          console.log("Selected cell text: " + dataValue);
       });
-      document.getElementById('text').innerText += dataValue; 
-      console.log("Selected cell text: " + dataValue);
+      
 }
